@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Customer email:</b>
+  <%= @order_start.customer_email %>
+</p>
+
+<p>
+  <b>Agency email:</b>
+  <%= @order_start.agency_email %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_start_path(@order_start) %> |
+<%= link_to 'Back', order_starts_path %>

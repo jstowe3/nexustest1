@@ -1,0 +1,36 @@
+<table >
+  <tr>
+    <td>
+      Job Products
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%=  select_tag :job , options_for_select(@job_products)%>
+
+    </td>
+    <td>
+      <%= button_to "Add to Cart" , :action => 'lineitemsave' %>
+    </td>
+  </tr>
+
+</table>
+
+<table >
+  <tr>
+    <td>
+      Subscription Products
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%=  select_tag :sub , options_for_select(@sub_products)%>
+
+    </td>
+    <td>
+      <%= button_to "Add to Cart" %>
+    </td>
+  </tr>
+
+</table>
+

@@ -1,0 +1,14 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+<h2>Your Cart</h2>
+
+<ul>
+  <% @cart.line_items.each do |item| %>
+      <li><%= item.product_desc %></li>
+  <% end %>
+</ul>
+
+<%= button_to 'Empty Cart', @cart, method: :delete,
+              data: {confirm: 'Are you sure?'}  %>

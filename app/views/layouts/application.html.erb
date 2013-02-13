@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nexus</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+  <%= image_tag("cb.png") %>
+  <%= image_tag("nexus.png", :align => "right") %>
+
+</head>
+<body class="<%= controller.controller_name %>">
+
+<!-- START_HIGHLIGHT -->
+<div id="banner">
+
+  <%=   'Order Entry' %><!-- <label id="code.depot.e.title"/> -->
+</div>
+<div id="columns">
+  <div id="side">
+    <div id="cart">
+      <%= render @cart %>
+    </div>
+
+
+
+    <ul>
+      <!-- START_HIGHLIGHT -->
+      <li><a href="http://www...."><%= t('.home') %></a></li>
+      <!-- END_HIGHLIGHT -->
+      <!-- START_HIGHLIGHT -->
+      <li><a href="http://www..../faq"><%= t('.questions') %></a></li>
+      <!-- END_HIGHLIGHT -->
+      <!-- START_HIGHLIGHT -->
+      <li><a href="http://www..../news"><%= t('.news') %></a></li>
+      <!-- END_HIGHLIGHT -->
+      <!-- START_HIGHLIGHT -->
+      <li><a href="http://www..../contact"><%= t('.contact') %></a></li>
+      <!-- END_HIGHLIGHT -->
+    </ul>
+
+
+  </div>
+  <div id="main">
+    <!-- END_HIGHLIGHT -->
+    <%= yield %><!-- <label id="code.depot.e.include"/> -->
+    <!-- START_HIGHLIGHT -->
+  </div>
+</div>
+<!-- END_HIGHLIGHT -->
+</body>
+</html>
+

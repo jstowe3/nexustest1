@@ -1,0 +1,103 @@
+<h1>Confirm Purchase</h1>
+<%= form_tag '/confirm_purchase/customerPost' do %>
+    <table>
+      <tr>
+        <td>
+          <div >
+            <h4>First Name</h4>
+            <%= hidden_field_tag 'AccountDID', (params[:customerInfo][:account_did]) %>
+            <%= hidden_field_tag 'FirstName' ,(params[:customerInfo][:firstname] or '')%>
+            <%= label_tag 'FirstName' ,(params[:customerInfo][:firstname] or '')%>
+          </div>
+        </td>
+        <td>
+          <div >
+            <h4>Last Name</h4>
+            <%= hidden_field_tag 'LastName' ,(params[:customerInfo][:lastname] or '')%>
+            <%= label_tag 'LastName',(params[:customerInfo][:lastname] or '') %>
+          </div>
+        </td>
+        <td>
+          <div >
+            <h4>Company</h4>
+            <%= hidden_field_tag 'Company',(params[:customerInfo][:company] or '') %>
+            <%= label_tag 'Company',(params[:customerInfo][:company] or '') %>
+          </div>
+        </td>
+
+      </tr>
+      <tr>
+        <td>
+          <div >
+            <h4>Address Line 1 </h4>
+            <%= hidden_field_tag 'Address1' ,(params[:customerInfo][:address1] or '')%>
+            <%= label_tag 'Address1' ,(params[:customerInfo][:address1] or '')%>
+          </div>
+        </td>
+        <td>
+          <div >
+            <h4>Address Line 2 </h4>
+            <%= hidden_field_tag 'Address2', (params[:customerInfo][:address2] or '-') %>
+            <%= label_tag 'Address2', (params[:customerInfo][:address2] or '-') %>
+          </div>
+        </td>
+        <td>
+          <div >
+            <h4>  City </h4>
+            <%= hidden_field_tag 'City',(params[:customerInfo][:city] or '') %>
+            <%= label_tag 'City',(params[:customerInfo][:city] or '') %>
+          </div>
+        </td>
+        <td>
+        <div >
+          <h4>State/Country</h4>
+          <%= hidden_field_tag 'StateCountry',(params[:customerInfo][:state] or '') %>
+          <%= label_tag 'StateCountry',(params[:customerInfo][:state] or '') %>
+        </div>
+      </td>
+        <td>
+          <div >
+            <h4>Postal Code</h4>
+            <%= hidden_field_tag 'PostalCode',(params[:customerInfo][:postalcode] or '-')%>
+            <%= label_tag 'PostalCode',(params[:customerInfo][:postalcode] or '-') %>
+          </div>
+        </td>
+      </tr>
+
+      <tr><td>
+        <div >
+          <h4>Phone</h4>
+          <%= hidden_field_tag 'Phone', (params[:customerInfo][:phone] or '-') %>
+          <%= label_tag 'Phone', (params[:customerInfo][:phone] or '-') %>
+        </div>
+      </td>
+        <td>
+        <div >
+          <h4>Email</h4>
+          <%= hidden_field_tag 'Email',(params[:customerInfo][:email] or '') %>
+          <%= label_tag 'Email',(params[:customerInfo][:email] or '') %>
+        </div>
+        </div>
+
+      </td><td>
+        <div >
+          <h4>PO Number</h4>
+          <%= hidden_field_tag 'PO','-' %>
+          <%= label_tag 'PO','-' %>
+        </div>
+
+      </td></tr>
+
+    </table>
+    <br/>
+    <h2>Products Selected</h2>
+    <% unless @cart.line_items.empty? %>
+        <table border="1">
+          <% @cart.line_items.each do |item| %>
+            <tr>  <td><li><%= item.product_desc %></li></td></tr>
+          <% end %>
+        </table>
+    <% end %>
+    <br/>
+     <%= submit_tag 'Purchase Products' %>
+<% end %>

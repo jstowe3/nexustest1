@@ -1,0 +1,77 @@
+<%= form_tag '/email/customerPost' do %>
+    <table>
+      <tr>
+        <td>
+          <div class="field">
+            <font color="red">*</font>First Name <br />
+            <%= hidden_field_tag 'AccountDID',(params[:customerInfo][:account_did] or '') %>
+            <%= text_field_tag 'FirstName' ,(params[:customerInfo][:firstname] or '')%>
+          </div>
+        </td>
+        <td>
+          <div class="field">
+            <font color="red">*</font>  City <br />
+            <%= text_field_tag 'City',(params[:customerInfo][:city] or '') %>
+          </div>
+        </td>
+      </tr>
+      <tr><td>
+        <div class="field">
+          <font color="red">*</font>Last Name <br />
+          <%= text_field_tag 'LastName' ,(params[:customerInfo][:lastname] or '')%>
+        </div>
+      </td><td>
+        <div class="field">
+          <font color="red">*</font>State/Country <br />
+          <%= text_field_tag 'StateCountry',(params[:customerInfo][:state] or '') %>
+        </div>
+      </td></tr>
+      <tr><td>
+        <div class="field">
+          <font color="red">*</font>Company <br />
+          <%= text_field_tag 'Company',(params[:customerInfo][:company] or '') %>
+        </div>
+      </td><td>
+        <div class="field">
+          <font color="red">*</font>Postal Code<br />
+          <%= text_field_tag 'PostalCode',(params[:customerInfo][:postalcode] or '') %>
+        </div>
+      </td></tr>
+
+      <tr><td>
+        <div class="field">
+          <font color="red">*</font>Address Line 1 <br />
+          <%= text_field_tag 'Address1' ,(params[:customerInfo][:address1] or '')%>
+        </div>
+      </td><td></td></tr>
+      <tr><td>
+        <div class="field">
+          Address Line 2 <br />
+          <%= text_field_tag 'Address2', (params[:customerInfo][:address2] or '') %>
+        </div>
+      </td><td>
+        <div class="field">
+          <font color="red">*</font>Phone<br />
+          <%= text_field_tag 'Phone', (params[:customerInfo][:phone] or '') %>
+        </div>
+      </td></tr>
+      <tr><td>
+        <div class="field">
+          <font color="red">*</font>Email<br />
+          <%= text_field_tag 'Email',(params[:customerInfo][:email] or '') %>
+        </div>
+        </div>
+
+      </td><td>
+        <div class="field">
+          PO Number<br />
+          <%= text_field_tag 'PO' %>
+        </div>
+
+      </td></tr>
+
+    </table>
+    <div>You agree that you have read and accept the Careerbuilder </div>
+      <div><a href="http://www.careerbuilder.com/JobSeeker/Info/HHTerms.aspx" target="_blank">Terms and Conditions </a>
+      <%= check_box_tag 'accept_terms', 'yes', true %> <%= submit_tag 'Submit' %></div>
+<% end %>

@@ -1,0 +1,40 @@
+<%= form_tag  '/products/lineItemsPost' do %>
+
+<div class="entry">
+  <table>
+
+    <tr>
+      <td>
+    Job Products
+      </td>
+      <td>
+
+             <%=  select_tag :job , options_for_select(@job_products,@selected_product)%>
+      </td>
+
+
+      <td>
+        <%= submit_tag 'Add to Cart', :name => 'jobclick'  %>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td>
+        Subscription Products
+      </td>
+      <td>
+        <%=  select_tag :sub_job , options_for_select(@sub_products,@selected_product)%>
+      </td>
+
+
+      <td>
+        <%= submit_tag  'Add to Cart', :name => 'subclick'  %>
+      </td>
+    </tr>
+
+
+  </table>
+ </div>
+
+<% end %>

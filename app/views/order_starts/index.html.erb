@@ -1,0 +1,19 @@
+<h1>Listing order_starts</h1>
+
+<table>
+
+
+<% @order_starts.each do |order_start| %>
+  <tr>
+    <td><%= order_start.customer_email %></td>
+    <td><%= order_start.agency_email %></td>
+    <td><%= link_to 'Show', order_start %></td>
+    <td><%= link_to 'Edit', edit_order_start_path(order_start) %></td>
+    <td><%= link_to 'Destroy', order_start, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Order start', new_order_start_path %>

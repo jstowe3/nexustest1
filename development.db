@@ -1,0 +1,3 @@
+select * from line_items;
+
+select * from carts;

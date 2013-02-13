@@ -1,0 +1,24 @@
+<h1>Order Start</h1>
+
+<table>
+  <tr>
+
+    <td>Email</td>
+    <td>
+
+      <!--<%= text_field_tag :customer_email  %>-->
+      <input type="text" id="custemail"  name="custemail"  width="20px">
+
+    </td>
+
+  </tr>
+  <tr><td></td><td></td></tr>
+  <tr>
+    <td></td>
+    <td><%= button_to 'Purchase',{:controller => "customers", :action => "new" },:custemail%>
+    </td>
+  </tr>
+
+</table>
+
+

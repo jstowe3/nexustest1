@@ -1,0 +1,17 @@
+
+<% unless @cart.line_items.empty? %>
+<div class="cart_title"><h2>Your Cart</h2></div>
+<table>
+  <% @cart.line_items.each do |item| %>
+      <li><%= item.product_desc %></li>
+  <% end %>
+
+</table>
+
+<!-- START_HIGHLIGHT -->
+
+<%= button_to "Checkout" , :controller => 'email', :action => 'emailAccept'%>
+<%= button_to 'Empty cart', cart, method: :delete,
+              #END_HIGHLIGHT
+              data: { confirm: 'Are you sure?' } %>
+<% end %>
