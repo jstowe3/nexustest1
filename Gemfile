@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.9'
 
 # Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+ #gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
   gem 'sqlite3'
@@ -32,7 +32,7 @@ gem 'jquery-rails'
 #gem 'soap4r'
 
 gem 'savon' ,:git => 'git://github.com/savonrb/savon.git'
-gem 'better_errors'
+#gem 'better_errors'
 #gem.add_dependency gem.add_dependency 'savon', '~>1.2.0'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

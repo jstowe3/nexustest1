@@ -1,4 +1,4 @@
-require 'soap/wsdlDriver'
+
 require 'rubygems'
 
 class CustomersController < ApplicationController
