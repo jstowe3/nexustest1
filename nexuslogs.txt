@@ -1,60 +1,3 @@
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.9/lib/rails/engine.rb:438:in `block in eager_load!'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.9/lib/rails/initializable.rb:54:in `run_initializers'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.9/lib/rails/engine.rb:439:in `block (2 levels) in eager_load!'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.9/lib/rails/initializable.rb:55:in `block in run_initializers'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.9/lib/active_support/dependencies.rb:312:in `depend_on'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/config.ru:3:in `block in <main>'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.9/lib/active_support/dependencies.rb:225:in `require_dependency'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.4/lib/rack/builder.rb:51:in `initialize'
-2013-02-13T23:15:50+00:00 app[web.1]: Exiting
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.9/lib/rails/initializable.rb:30:in `instance_exec'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.4/lib/rack/builder.rb:51:in `instance_eval'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.9/lib/rails/engine.rb:436:in `each'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.9/lib/rails/application.rb:136:in `initialize!'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.9/lib/rails/commands/server.rb:70:in `start'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.9/lib/rails/engine.rb:436:in `eager_load!'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.9/lib/rails/railtie/configurable.rb:30:in `method_missing'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/config.ru:3:in `require'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.9/lib/rails/application/finisher.rb:53:in `block in <module:Finisher>'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/config/environment.rb:5:in `<top (required)>'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.4/lib/rack/server.rb:200:in `app'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/config.ru:in `<main>'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.4/lib/rack/builder.rb:40:in `eval'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.4/lib/rack/builder.rb:40:in `parse_file'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/config.ru:in `new'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from script/rails:6:in `<main>'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.4/lib/rack/server.rb:304:in `wrapped_app'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.4/lib/rack/server.rb:254:in `start'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from script/rails:6:in `require'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.9/lib/rails/commands/server.rb:46:in `app'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.9/lib/rails/commands.rb:50:in `<top (required)>'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.9/lib/rails/commands.rb:55:in `block in <top (required)>'
-2013-02-13T23:15:50+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.9/lib/rails/commands.rb:50:in `tap'
-2013-02-13T23:15:52+00:00 heroku[web.1]: Process exited with status 1
-2013-02-13T23:15:52+00:00 heroku[web.1]: State changed from starting to crashed
-2013-02-13T23:24:22+00:00 heroku[slugc]: Slug compilation started
-2013-02-13T23:24:57+00:00 heroku[api]: Release v8 created by tsramanathan@yahoo.com
-2013-02-13T23:24:57+00:00 heroku[api]: Deploy f139d8a by tsramanathan@yahoo.com
-2013-02-13T23:24:58+00:00 heroku[web.1]: State changed from crashed to starting
-2013-02-13T23:24:58+00:00 heroku[slugc]: Slug compilation finished
-2013-02-13T23:25:00+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 57566`
-2013-02-13T23:25:03+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2013-02-13T23:25:03+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2013-02-13T23:25:05+00:00 app[web.1]:         This poses a security threat. It is strongly recommended that you
-2013-02-13T23:25:05+00:00 app[web.1]:         provide a secret to prevent exploits that may be possible from crafted
-2013-02-13T23:25:05+00:00 app[web.1]:         cookies. This will not be supported in future versions of Rack, and
-2013-02-13T23:25:05+00:00 app[web.1]: 
-2013-02-13T23:25:05+00:00 app[web.1]: 
-2013-02-13T23:25:05+00:00 app[web.1]:         SECURITY WARNING: No secret option provided to Rack::Session::Cookie.
-2013-02-13T23:25:05+00:00 app[web.1]:         future versions will even invalidate your existing user cookies.
-2013-02-13T23:25:05+00:00 app[web.1]:         Called from: /app/vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.9/lib/action_dispatch/middleware/session/abstract_store.rb:28:in `initialize'.
-2013-02-13T23:25:06+00:00 app[web.1]: => Booting WEBrick
-2013-02-13T23:25:06+00:00 app[web.1]: Connecting to database specified by DATABASE_URL
-2013-02-13T23:25:06+00:00 app[web.1]: => Rails 3.2.9 application starting in production on http://0.0.0.0:57566
-2013-02-13T23:25:06+00:00 app[web.1]: => Call with -d to detach
-2013-02-13T23:25:06+00:00 app[web.1]: => Ctrl-C to shutdown server
-2013-02-13T23:25:06+00:00 app[web.1]: [2013-02-13 23:25:06] INFO  WEBrick 1.3.1
-2013-02-13T23:25:06+00:00 app[web.1]: [2013-02-13 23:25:06] INFO  ruby 1.9.2 (2011-07-09) [x86_64-linux]
 2013-02-13T23:25:06+00:00 app[web.1]: [2013-02-13 23:25:06] INFO  WEBrick::HTTPServer#start: pid=2 port=57566
 2013-02-13T23:25:07+00:00 heroku[web.1]: State changed from starting to up
 2013-02-13T23:25:09+00:00 app[web.1]: Started GET "/" for 76.97.142.138 at 2013-02-13 23:25:09 +0000
@@ -99,3 +42,60 @@
 2013-02-13T23:25:24+00:00 app[web.1]:   app/controllers/products_controller.rb:8:in `index'
 2013-02-13T23:25:24+00:00 app[web.1]: 
 2013-02-13T23:25:24+00:00 heroku[router]: at=info method=GET path=/ host=nexustest.herokuapp.com fwd=76.97.142.138 dyno=web.1 queue=0 wait=0ms connect=6ms service=44ms status=500 bytes=643
+2013-02-13T23:39:09+00:00 heroku[slugc]: Slug compilation started
+2013-02-13T23:39:48+00:00 heroku[api]: Release v9 created by tsramanathan@yahoo.com
+2013-02-13T23:39:48+00:00 heroku[api]: Deploy 506f665 by tsramanathan@yahoo.com
+2013-02-13T23:39:49+00:00 heroku[web.1]: State changed from up to starting
+2013-02-13T23:39:49+00:00 heroku[slugc]: Slug compilation finished
+2013-02-13T23:39:50+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2013-02-13T23:39:50+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2013-02-13T23:39:50+00:00 app[web.1]: 	/usr/local/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
+2013-02-13T23:39:50+00:00 app[web.1]: [2013-02-13 23:39:50] ERROR SignalException: SIGTERM
+2013-02-13T23:39:51+00:00 app[web.1]: [2013-02-13 23:39:51] ERROR SignalException: SIGTERM
+2013-02-13T23:39:51+00:00 app[web.1]: 	/usr/local/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
+2013-02-13T23:39:53+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 10961`
+2013-02-13T23:39:59+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2013-02-13T23:39:59+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2013-02-13T23:40:00+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
+2013-02-13T23:40:00+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
+2013-02-13T23:40:01+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
+2013-02-13T23:40:01+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
+2013-02-13T23:40:01+00:00 app[web.1]:         SECURITY WARNING: No secret option provided to Rack::Session::Cookie.
+2013-02-13T23:40:01+00:00 app[web.1]:         This poses a security threat. It is strongly recommended that you
+2013-02-13T23:40:01+00:00 app[web.1]:         provide a secret to prevent exploits that may be possible from crafted
+2013-02-13T23:40:01+00:00 app[web.1]:         cookies. This will not be supported in future versions of Rack, and
+2013-02-13T23:40:01+00:00 app[web.1]:         future versions will even invalidate your existing user cookies.
+2013-02-13T23:40:01+00:00 app[web.1]: 
+2013-02-13T23:40:01+00:00 app[web.1]:         Called from: /app/vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.9/lib/action_dispatch/middleware/session/abstract_store.rb:28:in `initialize'.
+2013-02-13T23:40:01+00:00 app[web.1]: 
+2013-02-13T23:40:02+00:00 heroku[web.1]: Process exited with status 137
+2013-02-13T23:40:04+00:00 app[web.1]: => Ctrl-C to shutdown server
+2013-02-13T23:40:04+00:00 app[web.1]: Connecting to database specified by DATABASE_URL
+2013-02-13T23:40:04+00:00 app[web.1]: => Booting WEBrick
+2013-02-13T23:40:04+00:00 app[web.1]: => Rails 3.2.9 application starting in production on http://0.0.0.0:10961
+2013-02-13T23:40:04+00:00 app[web.1]: => Call with -d to detach
+2013-02-13T23:40:05+00:00 app[web.1]: [2013-02-13 23:40:05] INFO  WEBrick 1.3.1
+2013-02-13T23:40:05+00:00 app[web.1]: [2013-02-13 23:40:05] INFO  ruby 1.9.2 (2011-07-09) [x86_64-linux]
+2013-02-13T23:40:05+00:00 app[web.1]: [2013-02-13 23:40:05] INFO  WEBrick::HTTPServer#start: pid=2 port=10961
+2013-02-13T23:40:05+00:00 heroku[web.1]: State changed from starting to up
+2013-02-13T23:40:11+00:00 app[web.1]: Started GET "/" for 76.97.142.138 at 2013-02-13 23:40:11 +0000
+2013-02-13T23:40:11+00:00 app[web.1]: Processing by ProductsController#index as HTML
+2013-02-13T23:40:12+00:00 app[web.1]: Completed 500 Internal Server Error in 83ms
+2013-02-13T23:40:12+00:00 app[web.1]: ActiveRecord::StatementInvalid (PG::Error: ERROR:  relation "carts" does not exist
+2013-02-13T23:40:12+00:00 app[web.1]:              WHERE a.attrelid = '"carts"'::regclass
+2013-02-13T23:40:12+00:00 app[web.1]:   app/controllers/products_controller.rb:8:in `index'
+2013-02-13T23:40:12+00:00 app[web.1]: LINE 5:              WHERE a.attrelid = '"carts"'::regclass
+2013-02-13T23:40:12+00:00 app[web.1]:               FROM pg_attribute a LEFT JOIN pg_attrdef d
+2013-02-13T23:40:12+00:00 app[web.1]: ):
+2013-02-13T23:40:12+00:00 app[web.1]:   app/controllers/application_controller.rb:9:in `rescue in current_cart'
+2013-02-13T23:40:12+00:00 app[web.1]: 
+2013-02-13T23:40:12+00:00 app[web.1]:              ORDER BY a.attnum
+2013-02-13T23:40:12+00:00 app[web.1]: 
+2013-02-13T23:40:12+00:00 app[web.1]:                      pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod
+2013-02-13T23:40:12+00:00 app[web.1]: :             SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2013-02-13T23:40:12+00:00 app[web.1]:                                         ^
+2013-02-13T23:40:12+00:00 app[web.1]:                AND a.attnum > 0 AND NOT a.attisdropped
+2013-02-13T23:40:12+00:00 app[web.1]: 
+2013-02-13T23:40:12+00:00 app[web.1]:                 ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2013-02-13T23:40:12+00:00 app[web.1]:   app/controllers/application_controller.rb:7:in `current_cart'
+2013-02-13T23:40:12+00:00 heroku[router]: at=info method=GET path=/ host=nexustest.herokuapp.com fwd=76.97.142.138 dyno=web.1 queue=0 wait=0ms connect=2ms service=225ms status=500 bytes=643

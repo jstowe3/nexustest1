@@ -10,11 +10,13 @@
       <td>
 
              <%=  select_tag :job , options_for_select(@job_products,@selected_product)%>
+
       </td>
 
 
       <td>
         <%= submit_tag 'Add to Cart', :name => 'jobclick'  %>
+
       </td>
     </tr>
 
@@ -25,6 +27,7 @@
       </td>
       <td>
         <%=  select_tag :sub_job , options_for_select(@sub_products,@selected_product)%>
+
       </td>
 
 

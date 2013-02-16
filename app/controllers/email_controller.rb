@@ -60,7 +60,7 @@ class EmailController < ApplicationController
   def customerPost
     saveUser()
     customerHash = {
-        account_did: params[:AccountDID] ,
+        account_did: @account_did ,
         email: params[:Email],
         firstname: params[:FirstName],
         lastname: params[:LastName],
@@ -103,7 +103,7 @@ class EmailController < ApplicationController
     } )
 
     response_text = response.body[:save_sub_account_response][:save_sub_account_result]
-
+    @account_did = response.body[:save_sub_account_response][:account_did]
 
   end
 

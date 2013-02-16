@@ -24,13 +24,46 @@ class ProductsController < ApplicationController
     while $i < $num  do
       if @products[$i][:display_group] == 'Job'
         @job_products << @products[$i][:display_name]   + ' ' +  @products[$i][:quantity] + ' Jobs'
-        @jobs  << {:product_id => @products[$i][:product_id],:display_name => @products[$i][:display_name]}
+        @jobs << {:product_id => @products[$i][:product_id],
+                   :product_desc => @products[$i][:display_name]   + ' ' +  @products[$i][:quantity] + ' Jobs',
+                    :quantity => @products[$i][:quantity],
+                    :duration => @products[$i][:duration],
+                    :duration_type => @products[$i][:duration_type]}
       elsif @products[$i][:display_group] == 'Subscription'
         @sub_products << @products[$i][:display_name] + ' ' + @products[$i][:duration] + ' '+ @products[$i][:duration_type]
-        @sub_jobs  << {:product_id => @products[$i][:product_id],:product_desc => @products[$i][:display_name]}
+        @sub_jobs << {:product_id => @products[$i][:product_id],
+                       :product_desc => @products[$i][:display_name] + ' ' + @products[$i][:duration] + ' '+ @products[$i][:duration_type],
+                       :quantity => @products[$i][:quantity],
+                       :duration => @products[$i][:duration],
+                       :duration_type => @products[$i][:duration_type]}
+
       end
       $i +=1
     end
+    session[:jobs] = @jobs
+    session[:sub_jobs] = @sub_jobs
+  end
+
+  def find_product_details(product_desc,product_type)
+    if product_type == 'Jobs'
+      @products = session[:jobs]
+    elsif product_type == 'SubJobs'
+      @products = session[:sub_jobs]
+    end
+
+    $i = 0
+    $num = @products.count
+    @selected_product = []
+    while $i < $num  do
+      if @products[$i][:product_desc] == product_desc
+        @selected_product = {:product_id => @products[$i][:product_id],
+                             :quantity =>@products[$i][:quantity],
+                              :duration => @products[$i][:duration],
+                              :duration_type => @products[$i][:duration_type]}
+      end
+      $i +=1
+    end
+     @selected_product
   end
 
   def lineItemsPost
@@ -38,11 +71,20 @@ class ProductsController < ApplicationController
     @cart = current_cart
     @line_item = LineItem.new
   #  @line_item = @cart.line_items.build
+
+
     if params[:jobclick] != nil
       @line_item.product_desc = params[:job]
+      find_product_details(params[:job],'Jobs')
+
     elsif params[:subclick] != nil
        @line_item.product_desc = params[:sub_job]
+       find_product_details(params[:sub_job],'SubJobs')
     end
+    @line_item.product_id = @selected_product[:product_id]
+    @line_item.quantity = @selected_product[:quantity]
+    @line_item.duration_type = @selected_product[:duration_type]
+    @line_item.duration = @selected_product[:duration]
     @line_item.cart_id = @cart.id
 
     respond_to do |format|
