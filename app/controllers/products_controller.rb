@@ -5,14 +5,19 @@ class ProductsController < ApplicationController
   def index
     #@job_products = {:a => 'Job 1',:b => 'Job 2'}
     #@sub_products = {:c => 'Job 3', :c => 'Job 4'}
+
     @cart = current_cart
-   getProducts()
+    queryParams()
+    getProducts()
   end
 
   def  getProducts()
 
     client = Savon::Client.new(wsdl: 'http://nexustest.careerbuilder.com/webservices/purchasing.asmx?wsdl')
-    response = client.call( :get_purchasable_products , message: {'PartnerID' => 'Nexus','PartnerPassword' => 'R3S3LL3R','SecurityRole' => 'INDOReseller',
+
+    securityRole = session[:securityRole]
+
+    response = client.call( :get_purchasable_products , message: {'PartnerID' => 'Nexus','PartnerPassword' => 'R3S3LL3R','SecurityRole' => securityRole,
                                                                   'SystemScope' => 'Nexus'})
     @products = response.body[:get_purchasable_products_response][:ar_purchasable_product][:caws_purchasable_product];
     $i = 0

@@ -8,9 +8,12 @@ class EmailController < ApplicationController
   def emailPost
 
     @custEmail = params[:custEmail]
+    billingType = session[:billingType]
+    resellerMasterAccountDID = session[:resellerMasterAccountDID]
+
     client = Savon::Client.new(wsdl: 'http://nexustest.careerbuilder.com/webservices/purchasing.asmx?wsdl')
     response = client.call( :find_account_for_customer , message: {'PartnerID' => 'Nexus','PartnerPassword' => 'R3S3LL3R','Email' => @custEmail,
-                                                        'BillingType' => 'INRS', 'ResellerMasterAccountDID' => 'A41LH73VPINDONESIA'})
+                                                        'BillingType' => billingType, 'ResellerMasterAccountDID' => resellerMasterAccountDID})
     response_text = response.body[:find_account_for_customer_response][:account]
     #
     #soap =    SOAP::WSDLDriverFactory.new('http://nexustest.careerbuilder.com/webservices/purchasing.asmx?WSDL').create_rpc_driver
@@ -58,21 +61,37 @@ class EmailController < ApplicationController
   end
 
   def customerPost
-    saveUser()
-    customerHash = {
-        account_did: @account_did ,
-        email: params[:Email],
-        firstname: params[:FirstName],
-        lastname: params[:LastName],
-        city: params[:City],
-        state: params[:StateCountry],
-        postalcode: params[:PostalCode],
-        company: params[:Company],
-        phone: params[:Phone] ,
-        address1: params[:Address1]   ,
-        address2: params[:Address2]}
+    #@message = Email.new
+    #if @message.valid?
+      saveUser()
+      customerHash = {
+          account_did: @account_did ,
+          email: params[:Email],
+          firstname: params[:FirstName],
+          lastname: params[:LastName],
+          city: params[:City],
+          state: params[:StateCountry],
+          postalcode: params[:PostalCode],
+          company: params[:Company],
+          phone: params[:Phone] ,
+          address1: params[:Address1]   ,
+          address2: params[:Address2]}
 
-    redirect_to :controller => 'confirm_purchase',:action => 'show' , :customerInfo => customerHash
+      redirect_to :controller => 'confirm_purchase',:action => 'show' , :customerInfo => customerHash
+    #else
+    #  customerHash = {
+    #      account_did: '',
+    #      email: @custEmail,
+    #      firstname: '',
+    #      city: '',
+    #      state: '',
+    #      postalcode: '',
+    #      company: '',
+    #      phone: '' ,
+    #      address1: ''   ,
+    #      address2: ''}
+    #  redirect_to :controller => 'email', :action => 'show'  , :customerInfo => customerHash
+    #end
   end
 
   def saveUser
@@ -86,9 +105,9 @@ class EmailController < ApplicationController
     zip = params[:PostalCode]
     email = params[:Email]
     phone = params[:Phone]
-    master_account_did = 'A41LH73VPINDONESIA'
+    master_account_did = session[:resellerMasterAccountDID]
     account_did = params[:AccountDID]
-    sales_rep_id = 'INDEPENDENT'
+    sales_rep_id = session[:salesRepID]
 
 
     client = Savon::Client.new(wsdl: 'http://nexustest.careerbuilder.com/webservices/purchasing.asmx?wsdl')
