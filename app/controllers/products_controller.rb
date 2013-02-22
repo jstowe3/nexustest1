@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
 
     securityRole = session[:securityRole]
 
+    puts "Input parameter 1:" + securityRole
     response = client.call( :get_purchasable_products , message: {'PartnerID' => 'Nexus','PartnerPassword' => 'R3S3LL3R','SecurityRole' => securityRole,
                                                                   'SystemScope' => 'Nexus'})
     @products = response.body[:get_purchasable_products_response][:ar_purchasable_product][:caws_purchasable_product];
