@@ -1,0 +1,80 @@
+<%= form_tag '/accounts/account_post' do %>
+    <% if @account_vm != nil %>
+    <table>
+      <tr>
+        <td>
+          <div class="field">
+            <font color="red">*</font>First Name <br />
+            <%= hidden_field_tag 'AccountDID',(@account_vm.account_did or '') %>
+            <%= text_field_tag 'FirstName' ,(@account_vm.first_name or '')%>
+          </div>
+        </td>
+        <td>
+          <div class="field">
+            <font color="red">*</font>  City <br />
+            <%= text_field_tag 'City',(@account_vm.city or '') %>
+          </div>
+        </td>
+      </tr>
+      <tr><td>
+        <div class="field">
+          <font color="red">*</font>Last Name <br />
+          <%= text_field_tag 'LastName' ,(@account_vm.last_name or '')%>
+        </div>
+      </td><td>
+        <div class="field">
+          <font color="red">*</font>State/Country <br />
+          <%= text_field_tag 'StateCountry',(@account_vm.state_country or '') %>
+        </div>
+      </td></tr>
+      <tr><td>
+        <div class="field">
+          <font color="red">*</font>Company <br />
+          <%= text_field_tag 'Company',(@account_vm.company or '') %>
+        </div>
+      </td><td>
+        <div class="field">
+          <font color="red">*</font>Postal Code<br />
+          <%= text_field_tag 'PostalCode',(@account_vm.postal_code or '') %>
+        </div>
+      </td></tr>
+
+      <tr><td>
+        <div class="field">
+          <font color="red">*</font>Address Line 1 <br />
+          <%= text_field_tag 'Address1' ,(@account_vm.address1 or '')%>
+        </div>
+      </td><td></td></tr>
+      <tr><td>
+        <div class="field">
+          Address Line 2 <br />
+          <%= text_field_tag 'Address2', (@account_vm.address2 or '') %>
+        </div>
+      </td><td>
+        <div class="field">
+          <font color="red">*</font>Phone<br />
+          <%= text_field_tag 'Phone', (@account_vm.phone or '') %>
+        </div>
+      </td></tr>
+      <tr><td>
+        <div class="field">
+          <font color="red">*</font>Email<br />
+          <%= text_field_tag 'Email',(@account_vm.email or '') %>
+        </div>
+        </div>
+
+      </td><td>
+        <div class="field">
+          PO Number<br />
+          <%= text_field_tag 'PO',@account_vm.po
+          %>
+        </div>
+
+      </td></tr>
+
+    </table>
+    <div>You agree that you have read and accept the Careerbuilder </div>
+      <div><a href="http://www.careerbuilder.com/JobSeeker/Info/HHTerms.aspx" target="_blank">Terms and Conditions </a>
+      <%= check_box_tag 'accept_terms', 'yes', true %> <%= submit_tag 'Submit' %></div>
+        <% end %>
+<% end %>

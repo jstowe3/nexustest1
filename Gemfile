@@ -29,6 +29,11 @@ end
 
 gem 'jquery-rails'
 
+gem 'test-unit'
+gem 'simplecov'
+gem 'rspec'
+gem 'rspec-rails'
+
 #gem 'soap4r'
 
 gem 'savon' ,:git => 'git://github.com/savonrb/savon.git'

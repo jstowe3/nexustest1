@@ -37,4 +37,17 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def paramsReset
+    session[:cart_id] = nil
+    session[:securityRole] = nil
+    session[:resellerMasterAccountDID] = nil
+    session[:billingType] = nil
+    session[:salesRepID] = nil
+    session[:salesRepID] = nil
+    session[:partnerRepID] = nil
+    session[:partnerGroupID] = nil
+    session[:returnURL] = nil
+    session[:email] = nil
+  end
+
 end

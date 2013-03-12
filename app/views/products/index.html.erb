@@ -1,4 +1,4 @@
-<%= form_tag  '/products/lineItemsPost' do %>
+<%= form_tag  '/products/line_items_post' do %>
 
 <div class="entry">
   <table>
@@ -9,13 +9,14 @@
       </td>
       <td>
 
-             <%=  select_tag :job , options_for_select(@job_products,@selected_product)%>
+       <%=  select_tag :job , options_for_select(@product_vm.job_products.map(&:description) )
+                  %>
 
       </td>
 
 
       <td>
-        <%= submit_tag 'Add to Cart', :name => 'jobclick'  %>
+        <%= submit_tag 'Add to Cart', :name => 'jobclick',remote:true  %>
 
       </td>
     </tr>
@@ -26,13 +27,13 @@
         Subscription Products
       </td>
       <td>
-        <%=  select_tag :sub_job , options_for_select(@sub_products,@selected_product)%>
+        <%=  select_tag :sub_job , options_for_select(@product_vm.subscription_products.map(&:description),@selected_product)%>
 
       </td>
 
 
       <td>
-        <%= submit_tag  'Add to Cart', :name => 'subclick'  %>
+        <%= submit_tag  'Add to Cart', :name => 'subclick',remote:true  %>
       </td>
     </tr>
 

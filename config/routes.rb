@@ -1,34 +1,23 @@
 Nexus::Application.routes.draw do
+
+  resources :products
+      post 'products/line_items_post'
+  resources :accounts
+      get  'accounts/account_retrieve'
+      post 'accounts/account_retrieve'
+      post  'accounts/account_post'
+      get 'accounts/show'
+      get 'accounts/email_accept'
+      post 'accounts/email_accept'
+
   resources :line_items
-
-
   resources :carts
 
-
- # get "customers/accept"
-  #get "customers/email"
-  post "customers/new"
- get "customers/purchase"
-  post "customers/lineitemsave"
-#  get "customers/show"
-#  post "customers/show"
- # post "order_starts/create"
-#  post "order_starts/new"
-  get  'email/emailAccept'
-  post 'email/emailAccept'
-  post  'email/emailPost'
-  get 'email/show'
-  post 'email/customer'
-  post 'email/customerPost'
-  get 'confirm_purchase/show'
-  post 'confirm_purchase/customerPost'
-  resources :customers
-  #resources :email
+  get 'purchase/show'
+  post 'purchase/confirm_purchase'
 
   resources :order_starts
-  resources :products
 
-  post 'products/lineItemsPost'
   post 'carts/destroy'
   # The priority is based upon order of creation:
   # first created -> highest priority.

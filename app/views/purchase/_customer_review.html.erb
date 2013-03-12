@@ -1,0 +1,76 @@
+<font color="red"><%= @account_vm.error_message %> </font><br />
+<h1>Confirm Purchase</h1>
+<%= form_tag '/purchase/confirm_purchase' do %>
+    <table >
+      <tr>
+        <td><b>First Name:</b></td>
+        <%= hidden_field_tag 'AccountDID', @account_vm.account_did %>
+        <%= hidden_field_tag 'FirstName' ,(@account_vm.first_name or '')%>
+        <td><%=  @account_vm.first_name %></td>
+        </tr>
+      <tr>
+        <td><b>Last Name:</b></td>
+        <%= hidden_field_tag 'LastName' ,(@account_vm.last_name or '')%>
+        <td><%=  @account_vm.last_name %></td>
+        </tr>
+      <tr>
+        <td><b>Company:</b></td>
+        <%= hidden_field_tag 'Company',(@account_vm.company or '') %>
+        <td> <%=@account_vm.company  %>   </td>
+      </tr>
+      <tr>
+        <td><b>Address:</b></td>
+        <%= hidden_field_tag 'Address1' ,(@account_vm.address1 or '')%>
+        <td><%= @account_vm.address1 %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <%= hidden_field_tag 'Address2', (@account_vm.address2 or '-') %>
+       <td> <%= @account_vm.address2  %> </td>
+
+      </tr>
+      <tr>
+        <td><b>City:</b></td>
+        <%= hidden_field_tag 'City',(@account_vm.city or '') %>
+        <td><%= @account_vm.city  %> </td>
+      </tr>
+      <tr>
+        <td><b>State/Country:</b></td>
+        <%= hidden_field_tag 'StateCountry',(@account_vm.state_country or '') %>
+        <td><%= @account_vm.state_country  %> </td>
+      </tr>
+      <tr>
+        <td><b>Postal Code:</b></td>
+        <%= hidden_field_tag 'PostalCode',(@account_vm.postal_code or '-')%>
+        <td><%= @account_vm.postal_code  %> </td>
+      </tr>
+      <tr>
+        <td><b>Phone:</b></td>
+        <%= hidden_field_tag 'Phone', (@account_vm.phone or '-') %>
+        <td><%= @account_vm.phone  %></td>
+      </tr>
+      <tr>
+        <td><b>Email:</b></td>
+        <%= hidden_field_tag 'email',(@account_vm.email or '') %>
+        <td><%= @account_vm.email %> </td>
+
+      </tr>
+      <tr>
+        <td><b>PO Number:</b></td>
+        <%= hidden_field_tag 'PO',@account_vm.po %>
+        <td> <%= @account_vm.po %> </td>
+      </tr>
+    </table>
+
+    <br/>
+    <h2>Products Selected</h2>
+    <% unless @cart.line_items.empty? %>
+        <table border="1">
+          <% @cart.line_items.each do |item| %>
+            <tr>  <td><li><%= item.product_desc %></li></td></tr>
+          <% end %>
+        </table>
+    <% end %>
+    <br/>
+     <%= submit_tag 'Purchase Products' %>
+<% end %>

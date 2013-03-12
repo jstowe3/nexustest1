@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  product: MyString
+  product_id: MyString
   quantity: 1
   duration: 1
-  cost: 9.99
+  duration_type: MyStr
 
 two:
-  product: MyString
+  product_id: MyString
   quantity: 1
   duration: 1
-  cost: 9.99
+  duration_type: Mystr

@@ -10,7 +10,7 @@
 
 <!-- START_HIGHLIGHT -->
 
-<%= button_to "Checkout" , :controller => 'email', :action => 'emailAccept'%>
+<%= button_to "Checkout" , :controller => 'accounts', :action => 'email_accept'%>
 <%= button_to 'Empty cart', cart, method: :delete,
               #END_HIGHLIGHT
               data: { confirm: 'Are you sure?' } %>
