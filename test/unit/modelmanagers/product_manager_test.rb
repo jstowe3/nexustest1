@@ -23,6 +23,7 @@ class ProductManagerTest < ActiveSupport::TestCase
     @product_mgr.stub!(:get_products).and_return({:websvc_response => 'Success', :return_count => 10 })
     assert_equal 'Success', @product_mgr.get_products[:websvc_response]
     assert @product_mgr.get_products[:return_count] > 0
+    @product_mgr.get_products.shou
   end
 
   #test "get products test invalid success" do
