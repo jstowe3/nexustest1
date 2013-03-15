@@ -13,7 +13,6 @@ class AccountsHelperTest < ActionView::TestCase
     @account_mgr.stub!(:find_account_for_customer).and_return({:websvc_response => 'Success', :account => account_mock })
 
     account = @account_mgr.find_account_for_customer[:account]
-
     name = account.name
     findex = name.index(' ')
     eindex = findex+1
@@ -29,6 +28,10 @@ class AccountsHelperTest < ActionView::TestCase
     account_vm.phone = account.phone
     account_vm.address1 = account.address1
     account_vm.address2 = account.address2
+
+    assert_equal 'CBFirst', account_vm.first_name
+    assert_equal 'CBLast', account_vm.last_name
+    assert_equal 'GAUS', account_vm.state_country
   end
 
   def account_mock

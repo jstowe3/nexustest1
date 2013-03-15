@@ -13,6 +13,12 @@ class AccountsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should account retrieve fail" do
+    session[:billingType] = 'INRS'
+    session[:resellerMasterAccountDID] = 'A41LH73VPINDONESIA'
+    get :account_retrieve, {:customer_email => 'cbtest88@cb.com'}
+    assert_response :success
+  end
   #test "this one is going to fail" do
   #  session[:billingType] = nil
   #  session[:resellerMasterAccountDID] = ''

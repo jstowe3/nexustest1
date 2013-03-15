@@ -8,11 +8,9 @@ class AccountsController < ApplicationController
     respond_to do |format|
       format.html
     end
-
   end
 
   def account_retrieve
-
     @cart = current_cart
     account_mgr = AccountManager.new()
     account_mgr.billing_type = session[:billingType]
@@ -27,22 +25,16 @@ class AccountsController < ApplicationController
       format.html {render :action => 'show', :account_vm => @account_vm}
       format.json { render json: @account_vm }
     end
-
-    #redirect_to  :controller => 'accounts',:action => 'show' , :customerInfo => customer_hash
-
   end
-  def show
 
+  def show
     @cart = current_cart
     respond_to do |format|
       format.html
     end
-
-
   end
 
   def account_post
-
       @cart = current_cart
       account = set_account()
       account_mgr = AccountManager.new
@@ -52,10 +44,6 @@ class AccountsController < ApplicationController
         format.html {redirect_to :controller => 'purchase', :action => 'show',:email =>account.email }
         #format.json { render json: @account_vm }
       end
-
-      #redirect_to :controller => 'purchase',:action => 'show' , :customerInfo => customer_hash
-
   end
-
 
 end

@@ -24,6 +24,14 @@ class CartsControllerTest < ActionController::TestCase
     assert_redirected_to cart_path(assigns(:cart))
   end
 
+  test "should create cart failure" do
+    assert_difference('Cart.count') do
+      post :create
+    end
+
+    assert_redirected_to cart_path(assigns(:cart))
+  end
+
   test "should show cart" do
     get :show, id: @cart
     assert_response :success
